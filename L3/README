@@ -1,0 +1,12 @@
+Graf w programie jest reprezentowany jako graf skierowany, ale zostaje on uzupełniony o połączenia w obydwie strony.
+Graf przechowuje informacje o koszcie przejścia między wierzchołkami, domyślnie wynosi on 1, ale można łatwo zmodyfikować.
+
+Na początku działania program wyświetla tabele początkowych odległości między wierzchołkami (ustawioną zgodnie z wymaganiami) w sieci i tabele odległości zoptymalizowaną algorytmem Floyda-Warshalla.
+Wyliczone zoptymalizowane odległości między wierzchołkami są używane w celu zakończenia programu po zoptymalizowaniu grafu przez program.
+
+Na końcu wyświetlana jest tabela kosztów odległości wyliczona przez program.
+
+Tabele odległości mają format:
+    - n-ty wiersz wskazuje na początkowy wierzchołek
+    - k-ta kolumna określa docelowy wierzchołek
+

@@ -1,0 +1,14 @@
+Uwagi do zadań
+
+Ogólne:
+System wykrywania zablokowania się sieci jest oparty o wachdog'a, do którego wątki zgłaszają działanie.
+Gdy wachdog wygryje, że wątki nie zgłosiły się od pewnego czasu, to wyszukuje wątek w statnie wysyłania i do którego jest wysyłana wiadomość i odblokowuje go, przez usunięcie wysyłanej przez niego wiadomości.
+Dzięki takiemu wyszukiwaniu mamy gwarancję, że dzieki temu co najmniej jedna wadomość zostanie odebrana i możemy liczyć na odblokowanie się sieci.
+
+Wątek kusownika może założyć tylko jedną pułapkę w danym wieszchołku.
+
+Ada:
+Z uwagi na to, że nie można przerwać z zewnątrz wywołania rendezvous, to podczas wysyłania wątki co pewen czas przestają wysyłać wiadomość i sprawdzają, czy wysyłanie nie zostało anulowane przez watchdog'a.
+Jeżeli nie, to wracają do próby wywołania rendezvous.
+
+Aby nie blokować kusownika, pułapki ustawane są w tablicy, a synchronizacja jest zapewniana przez binarne semafory.
